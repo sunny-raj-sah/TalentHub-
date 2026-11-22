@@ -1,6 +1,7 @@
  
 
 import mongoose from "mongoose";
+import { CanvasFactory } from "pdf-parse/worker";
 import { PDFParse } from "pdf-parse";
 
 
@@ -384,7 +385,12 @@ export const extractJobApplicationResumeTextForAI = async (
     throw createError("The applicant's resume is not a valid PDF.", 422);
   }
 
-  const parser = new PDFParse({ data: buffer });
+  // const parser = new PDFParse({ data: buffer });
+
+  const parser = new PDFParse({
+  data: new Uint8Array(buffer),
+  CanvasFactory,
+});
 
   try {
     const result = await parser.getText();
