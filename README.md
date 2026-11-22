@@ -3,6 +3,23 @@
 An AI-powered recruitment platform that connects applicants and recruiters through an integrated hiring experience. TalentHub streamlines job discovery, application management, candidate evaluation, and interview preparation with role-based workflows and AI-assisted insights.
 
 ---
+## 🌐 Live Demo
+
+Experience TalentHub live:
+
+| Application | Link |
+|---|---|
+| **Frontend** | [TalentHub – Live Application](https://talenthub-frontend-phi.vercel.app) |
+| **API Health Check** | [Check API Status](https://talent-hub-backend-livid.vercel.app/api/health) |
+
+### Demo Information
+
+- **Frontend:** React 19, Vite, Redux Toolkit
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB Atlas
+- **Deployment:** Vercel
+
+> **Note:** The backend API is intended to be consumed by the TalentHub frontend. Open the API Health Check link to verify server and database connectivity.
 
 ## Overview
 
