@@ -1,0 +1,310 @@
+ @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   TALENTHUB - GLOBAL DESIGN SYSTEM
+   Single source of truth for tokens.
+   Import this file first, before
+   public-layout.css and dashboard-layout.css.
+========================================= */
+
+:root {
+  /* ---------- Typography ---------- */
+  font-family: "DM Sans", sans-serif;
+
+  --th-font-body: "DM Sans", sans-serif;
+  --th-font-heading: "Plus Jakarta Sans", sans-serif;
+
+  /* ---------- Brand ---------- */
+  --th-primary: #7185ff;
+  --th-primary-hover: #5f74f2;
+  --th-primary-dark: #566be8;
+  --th-primary-soft: rgba(113, 133, 255, 0.12);
+  --th-primary-border: rgba(113, 133, 255, 0.2);
+
+  --th-purple: #9067e9;
+  --th-purple-soft: rgba(144, 103, 233, 0.12);
+
+  --th-primary-gradient: linear-gradient(140deg, #7185ff 0%, #9067e9 100%);
+
+  --th-primary-shadow: 0 5px 15px rgba(113, 133, 255, 0.2);
+  --th-primary-shadow-hover: 0 7px 19px rgba(113, 133, 255, 0.3);
+
+  --th-on-primary: #ffffff;
+
+  /* ---------- Sidebar (light) ---------- */
+  --th-sidebar-bg: #ffffff;
+  --th-sidebar-border: #e9edf4;
+  --th-sidebar-text: #596579;
+  --th-sidebar-muted: #929bad;
+  --th-sidebar-hover: #f5f7fb;
+  --th-sidebar-active: rgba(113, 133, 255, 0.12);
+  --th-sidebar-active-text: #7185ff;
+
+  /* ---------- Backgrounds and surfaces ---------- */
+  --th-background: #f5f7fb;
+  --th-workspace-bg: #f5f7fb;
+  --th-surface: #ffffff;
+  --th-surface-soft: #f8f9fc;
+  --th-topbar-bg: rgba(255, 255, 255, 0.94);
+  --th-public-bg: #ffffff;
+
+  /* ---------- Typography colors ---------- */
+  --th-heading: #172033;
+  --th-text: #596579;
+  --th-muted: #929bad;
+  --th-text-light: #a6b0c2;
+
+  /* ---------- Borders ---------- */
+  --th-border: #e9edf4;
+  --th-border-strong: #dce2ec;
+
+  /* ---------- Status colors ---------- */
+  --th-success: #16a34a;
+  --th-success-soft: rgba(22, 163, 74, 0.1);
+
+  --th-warning: #d97706;
+  --th-warning-soft: rgba(217, 119, 6, 0.1);
+
+  --th-danger: #dc2626;
+  --th-danger-soft: rgba(220, 38, 38, 0.1);
+  --th-danger-border: rgba(220, 38, 38, 0.2);
+
+  --th-info: #2563eb;
+  --th-info-soft: rgba(37, 99, 235, 0.1);
+
+  /* ---------- Border radius ---------- */
+  --th-radius-xs: 4px;
+  --th-radius-sm: 8px;
+  --th-radius: 10px;
+  --th-radius-md: 12px;
+  --th-radius-lg: 14px;
+  --th-radius-xl: 18px;
+
+  /* ---------- Shadows ---------- */
+  --th-shadow-sm: 0 2px 8px rgba(20, 35, 70, 0.04);
+  --th-shadow-md: 0 8px 30px rgba(20, 35, 70, 0.07);
+  --th-shadow-lg: 0 15px 45px rgba(20, 35, 70, 0.1);
+
+  /* ---------- Transitions ---------- */
+  --th-transition: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ---------- Compatibility aliases ---------- */
+  --th-accent: var(--th-primary);
+  --th-accent-soft: var(--th-primary-soft);
+
+  --th-public-heading: var(--th-heading);
+  --th-public-text: var(--th-text);
+  --th-public-muted: var(--th-muted);
+  --th-public-border: var(--th-border);
+}
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--th-font-body);
+  color: var(--th-text);
+  background: var(--th-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--th-font-heading);
+  color: var(--th-heading);
+  font-weight: 700;
+}
+
+p {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-control,
+.form-select {
+  min-height: 46px;
+  color: var(--th-heading);
+  background-color: var(--th-surface);
+  border-color: var(--th-border);
+  border-radius: var(--th-radius-sm);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+  color: var(--th-muted);
+}
+
+.form-control:focus,
+.form-select:focus {
+  color: var(--th-heading);
+  border-color: var(--th-primary);
+  box-shadow: 0 0 0 3px var(--th-primary-soft);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  background-color: var(--th-surface-soft);
+  cursor: not-allowed;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+  border-radius: var(--th-radius-sm);
+  font-weight: 600;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-primary {
+  --bs-btn-color: var(--th-on-primary);
+  --bs-btn-bg: var(--th-primary);
+  --bs-btn-border-color: var(--th-primary);
+
+  --bs-btn-hover-color: var(--th-on-primary);
+  --bs-btn-hover-bg: var(--th-primary-hover);
+  --bs-btn-hover-border-color: var(--th-primary-hover);
+
+  --bs-btn-active-color: var(--th-on-primary);
+  --bs-btn-active-bg: var(--th-primary-dark);
+  --bs-btn-active-border-color: var(--th-primary-dark);
+
+  --bs-btn-disabled-bg: var(--th-primary);
+  --bs-btn-disabled-border-color: var(--th-primary);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--th-primary);
+  --bs-btn-border-color: var(--th-primary);
+
+  --bs-btn-hover-color: var(--th-on-primary);
+  --bs-btn-hover-bg: var(--th-primary);
+  --bs-btn-hover-border-color: var(--th-primary);
+
+  --bs-btn-active-color: var(--th-on-primary);
+  --bs-btn-active-bg: var(--th-primary-dark);
+  --bs-btn-active-border-color: var(--th-primary-dark);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card {
+  color: var(--th-text);
+  background: var(--th-surface);
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-md);
+  box-shadow: var(--th-shadow-sm);
+}
+
+/* =========================================
+   JOB CARDS
+========================================= */
+
+.job-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--th-shadow-md) !important;
+  border-color: var(--th-primary-border) !important;
+}
+
+.job-card h5 a {
+  transition: color 0.2s ease;
+}
+
+.job-card h5 a:hover {
+  color: var(--th-primary) !important;
+}
+
+/* =========================================
+   GLOBAL ACCESSIBILITY
+========================================= */
+
+::selection {
+  color: var(--th-on-primary);
+  background: var(--th-primary);
+}
+
+:focus-visible {
+  outline-color: var(--th-primary);
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
